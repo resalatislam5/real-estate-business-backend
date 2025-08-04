@@ -22,7 +22,7 @@ enum division {
 
 enum propertyStatus {
   "For Sale",
-  "For Rant",
+  "For Rent",
 }
 export class CreatePropertyDto {
   @IsString()

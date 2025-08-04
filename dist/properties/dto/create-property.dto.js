@@ -30,7 +30,7 @@ var division;
 var propertyStatus;
 (function (propertyStatus) {
     propertyStatus[propertyStatus["For Sale"] = 0] = "For Sale";
-    propertyStatus[propertyStatus["For Rant"] = 1] = "For Rant";
+    propertyStatus[propertyStatus["For Rent"] = 1] = "For Rent";
 })(propertyStatus || (propertyStatus = {}));
 class CreatePropertyDto {
 }

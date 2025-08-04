@@ -8,7 +8,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: "*",
+    origin: ["https://real-estate-business-frontend.vercel.app/", "*"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   });
   // Correct static files configuration
   app.useStaticAssets(join(__dirname, "..", "uploads"), {

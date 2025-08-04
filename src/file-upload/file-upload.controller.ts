@@ -1,17 +1,13 @@
 import {
   Controller,
   FileTypeValidator,
-  Get,
-  Param,
   ParseFilePipe,
   Post,
-  Res,
   UploadedFile,
   UseGuards,
   UseInterceptors,
 } from "@nestjs/common";
 import { FileInterceptor } from "@nestjs/platform-express";
-import { Response } from "express";
 import { AuthGuards } from "src/guards/auth.guards";
 import { FileUploadService } from "./file-upload.service";
 
