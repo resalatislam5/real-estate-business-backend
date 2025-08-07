@@ -21,13 +21,17 @@ let FileUploadController = class FileUploadController {
     constructor(FileUploadService) {
         this.FileUploadService = FileUploadService;
     }
-    create(file) {
+    create(file, folder) {
         console.log("hit file-upload");
-        return this.FileUploadService.create(file);
+        return this.FileUploadService.create(file, folder);
+    }
+    findOne(id, res) {
+        return this.FileUploadService.findOne(id, res);
     }
 };
 exports.FileUploadController = FileUploadController;
 __decorate([
+    (0, common_1.UseGuards)(auth_guards_1.AuthGuards),
     (0, common_1.Post)(),
     (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)("file")),
     __param(0, (0, common_1.UploadedFile)(new common_1.ParseFilePipe({
@@ -35,12 +39,20 @@ __decorate([
             new common_1.FileTypeValidator({ fileType: "image/*" }),
         ],
     }))),
+    __param(1, (0, common_1.Query)("folder")),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", void 0)
 ], FileUploadController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)(":id"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Res)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], FileUploadController.prototype, "findOne", null);
 exports.FileUploadController = FileUploadController = __decorate([
-    (0, common_1.UseGuards)(auth_guards_1.AuthGuards),
     (0, common_1.Controller)("file-upload"),
     __metadata("design:paramtypes", [file_upload_service_1.FileUploadService])
 ], FileUploadController);

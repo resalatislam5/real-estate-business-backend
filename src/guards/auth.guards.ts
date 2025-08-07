@@ -23,11 +23,11 @@ export class AuthGuards implements CanActivate {
     console.log("Authentication start");
 
     const token = this.extractTokenFromHeader(request);
-    // console.log(
-    //   "auth",
-    //   token,
-    //   context.switchToHttp().getRequest().headers.authorization
-    // );
+    console.log(
+      "auth",
+      token,
+      context.switchToHttp().getRequest().headers.authorization
+    );
 
     if (!token) {
       throw new UnauthorizedException("Invalid Token");

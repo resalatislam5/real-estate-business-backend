@@ -18,6 +18,10 @@ exports.FileUpload = FileUpload;
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),
     __metadata("design:type", String)
+], FileUpload.prototype, "folderName", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ required: true }),
+    __metadata("design:type", String)
 ], FileUpload.prototype, "fileName", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true }),

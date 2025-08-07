@@ -27,6 +27,7 @@ let AuthGuards = class AuthGuards {
         const request = context.switchToHttp().getRequest();
         console.log("Authentication start");
         const token = this.extractTokenFromHeader(request);
+        console.log("auth", token, context.switchToHttp().getRequest().headers.authorization);
         if (!token) {
             throw new common_1.UnauthorizedException("Invalid Token");
         }

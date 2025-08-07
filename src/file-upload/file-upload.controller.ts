@@ -1,8 +1,12 @@
 import {
   Controller,
   FileTypeValidator,
+  Get,
+  Param,
   ParseFilePipe,
   Post,
+  Query,
+  Res,
   UploadedFile,
   UseGuards,
   UseInterceptors,
@@ -10,12 +14,13 @@ import {
 import { FileInterceptor } from "@nestjs/platform-express";
 import { AuthGuards } from "src/guards/auth.guards";
 import { FileUploadService } from "./file-upload.service";
+import { Response } from "express";
 
-@UseGuards(AuthGuards)
 @Controller("file-upload")
 export class FileUploadController {
   constructor(private readonly FileUploadService: FileUploadService) {}
 
+  @UseGuards(AuthGuards)
   @Post()
   @UseInterceptors(FileInterceptor("file"))
   create(
@@ -27,16 +32,21 @@ export class FileUploadController {
         ],
       })
     )
-    file: Express.Multer.File
+    file: Express.Multer.File,
+    @Query("folder") folder: string
   ) {
     console.log("hit file-upload");
 
-    return this.FileUploadService.create(file);
+    return this.FileUploadService.create(file, folder);
   }
 
   // get image  from database
-  // @Get(":id")
-  // findOne(@Param("id") id: string, @Res() res: Response) {
-  //   return this.FileUploadService.findOne(id, res);
-  // }
+  @Get(":id")
+  findOne(
+    @Param("id") id: string,
+
+    @Res() res: Response
+  ) {
+    return this.FileUploadService.findOne(id, res);
+  }
 }

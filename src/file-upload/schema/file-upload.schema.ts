@@ -4,6 +4,9 @@ import { Document } from "mongoose";
 @Schema()
 export class FileUpload extends Document {
   @Prop({ required: true })
+  folderName: string;
+
+  @Prop({ required: true })
   fileName: string;
 
   @Prop({ required: true })

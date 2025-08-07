@@ -15,8 +15,6 @@ const auth_module_1 = require("../auth/auth.module");
 const file_upload_controller_1 = require("./file-upload.controller");
 const file_upload_service_1 = require("./file-upload.service");
 const file_upload_schema_1 = require("./schema/file-upload.schema");
-const fs = require("fs");
-const path = require("path");
 let FileUploadModule = class FileUploadModule {
 };
 exports.FileUploadModule = FileUploadModule;
@@ -28,19 +26,7 @@ exports.FileUploadModule = FileUploadModule = __decorate([
             ]),
             auth_module_1.AuthModule,
             platform_express_1.MulterModule.register({
-                storage: (0, multer_1.diskStorage)({
-                    destination: (req, file, cb) => {
-                        const rawFolder = req.query.folder?.toString() || "default";
-                        const safeFolder = rawFolder.replace(/(\.\.\/|\/|\\)/g, "");
-                        const uploadPath = path.join("uploads", safeFolder);
-                        fs.mkdirSync(uploadPath, { recursive: true });
-                        cb(null, uploadPath);
-                    },
-                    filename: (_, file, cb) => {
-                        const fileName = Date.now() + "-" + file.originalname;
-                        cb(null, fileName);
-                    },
-                }),
+                storage: (0, multer_1.memoryStorage)(),
             }),
         ],
         controllers: [file_upload_controller_1.FileUploadController],

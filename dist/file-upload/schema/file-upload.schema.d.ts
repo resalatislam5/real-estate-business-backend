@@ -1,5 +1,6 @@
 import { Document } from "mongoose";
 export declare class FileUpload extends Document {
+    folderName: string;
     fileName: string;
     contentType: string;
     base64Data: string;
