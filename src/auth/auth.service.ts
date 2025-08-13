@@ -153,11 +153,12 @@ export class AuthService {
   // update user info
   async update(id: string, updateAuthDto: UpdateAuthDto) {
     const { name, number, address, image, newImage } = updateAuthDto;
-
-    if (newImage) {
-      DeleteImage(image);
-      console.log("DeleteImage", updateAuthDto);
-    }
+    // TODO:Implement latter
+    // if (newImage) {
+    //   DeleteImage(image);
+    //   console.log("DeleteImage", updateAuthDto);
+    // }
+    console.log("update user", name, number, address);
 
     const updateDto = { name, number, address, image: newImage ?? image };
     const data = await this.UserModel.findByIdAndUpdate(

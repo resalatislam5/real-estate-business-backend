@@ -135,10 +135,7 @@ let AuthService = class AuthService {
     }
     async update(id, updateAuthDto) {
         const { name, number, address, image, newImage } = updateAuthDto;
-        if (newImage) {
-            (0, DeleteImage_1.DeleteImage)(image);
-            console.log("DeleteImage", updateAuthDto);
-        }
+        console.log("update user", name, number, address);
         const updateDto = { name, number, address, image: newImage ?? image };
         const data = await this.UserModel.findByIdAndUpdate(id, updateDto, { new: true, runValidators: true });
         if (!data) {

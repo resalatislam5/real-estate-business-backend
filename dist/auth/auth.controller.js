@@ -41,6 +41,7 @@ let AuthController = class AuthController {
         return this.authService.oneUser(id);
     }
     update(id, updateAuthDto) {
+        console.log("updateAuthDto M", updateAuthDto);
         return this.authService.update(id, updateAuthDto);
     }
     remove(id) {

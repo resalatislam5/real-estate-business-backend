@@ -49,6 +49,7 @@ export class AuthController {
   @UseGuards(AuthGuards)
   @Patch(":id")
   update(@Param("id") id: string, @Body() updateAuthDto: UpdateAuthDto) {
+    console.log("updateAuthDto M", updateAuthDto);
     return this.authService.update(id, updateAuthDto);
   }
 

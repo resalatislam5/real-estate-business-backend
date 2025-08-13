@@ -11,7 +11,7 @@ async function bootstrap() {
     const frontendURL = configService.get("FRONTEND_URL");
     app.enableCors({
         origin: frontendURL,
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     });
     await app.listen(process.env.PORT ?? 8000);
 }

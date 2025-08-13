@@ -11,7 +11,7 @@ async function bootstrap() {
   const frontendURL = configService.get<string>("FRONTEND_URL");
   app.enableCors({
     origin: frontendURL,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   });
   // Correct static files configuration
   // when use server upload then use this
