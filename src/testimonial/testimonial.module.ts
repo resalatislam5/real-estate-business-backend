@@ -12,7 +12,6 @@ import { TestimonialService } from "./testimonial.service";
       { name: Testimonial.name, schema: TestimonialSchema },
     ]),
     AuthModule,
-    FileUploadModule,
   ],
   controllers: [TestimonialController],
   providers: [TestimonialService],

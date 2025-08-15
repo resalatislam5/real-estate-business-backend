@@ -12,8 +12,7 @@ import { Testimonial } from "./schema/testimonial.schema";
 @Injectable()
 export class TestimonialService {
   constructor(
-    @InjectModel(Testimonial.name) private testimonialModel: Model<Testimonial>,
-    private fileUploadService: FileUploadService
+    @InjectModel(Testimonial.name) private testimonialModel: Model<Testimonial>
   ) {}
   async create(createTestimonialDto: CreateTestimonialDto) {
     const data = await this.testimonialModel.create(createTestimonialDto);
