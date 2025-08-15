@@ -8,4 +8,5 @@ export declare class FileUploadService {
         path: string;
     }>;
     findOne(_id: string, res: Response): Promise<void>;
+    remove(id: String): Promise<void>;
 }

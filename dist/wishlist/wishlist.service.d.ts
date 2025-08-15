@@ -7,13 +7,13 @@ export declare class WishlistService {
     constructor(wishlistModel: Model<Wishlist>);
     create(createWishlistDto: CreateWishlistDto, user: any): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, Wishlist> & Wishlist & Required<{
+        data: import("mongoose").Document<unknown, {}, Wishlist, {}, {}> & Wishlist & Required<{
             _id: unknown;
         }> & {
             __v: number;
         };
     }>;
-    findAll(user: any): Promise<(import("mongoose").Document<unknown, {}, Wishlist> & Wishlist & Required<{
+    findAll(user: any): Promise<(import("mongoose").Document<unknown, {}, Wishlist, {}, {}> & Wishlist & Required<{
         _id: unknown;
     }> & {
         __v: number;

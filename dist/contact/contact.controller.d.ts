@@ -7,7 +7,7 @@ export declare class ContactController {
         message: string;
     }>;
     findAll(): Promise<{
-        data: (import("mongoose").Document<unknown, {}, import("./schema/contact.schema").Contact> & import("./schema/contact.schema").Contact & Required<{
+        data: (import("mongoose").Document<unknown, {}, import("./schema/contact.schema").Contact, {}, {}> & import("./schema/contact.schema").Contact & Required<{
             _id: unknown;
         }> & {
             __v: number;

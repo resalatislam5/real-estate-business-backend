@@ -28,6 +28,9 @@ let FileUploadController = class FileUploadController {
     findOne(id, res) {
         return this.FileUploadService.findOne(id, res);
     }
+    remove(id) {
+        return this.FileUploadService.remove(id);
+    }
 };
 exports.FileUploadController = FileUploadController;
 __decorate([
@@ -52,6 +55,14 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], FileUploadController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.UseGuards)(auth_guards_1.AuthGuards),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], FileUploadController.prototype, "remove", null);
 exports.FileUploadController = FileUploadController = __decorate([
     (0, common_1.Controller)("file-upload"),
     __metadata("design:paramtypes", [file_upload_service_1.FileUploadService])

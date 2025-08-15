@@ -58,6 +58,14 @@ let FileUploadService = class FileUploadService {
             throw new common_1.ForbiddenException("Data Not Found");
         }
     }
+    async remove(id) {
+        try {
+            await this.fileUploadModel.findByIdAndDelete(id);
+        }
+        catch (e) {
+            throw new common_1.InternalServerErrorException(e.message);
+        }
+    }
 };
 exports.FileUploadService = FileUploadService;
 exports.FileUploadService = FileUploadService = __decorate([

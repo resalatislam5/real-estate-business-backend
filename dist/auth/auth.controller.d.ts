@@ -32,19 +32,19 @@ export declare class AuthController {
         jwtToken: string;
         refreshToken: string;
     }>;
-    allUser(): Promise<(import("mongoose").Document<unknown, {}, import("./schema/user.schema").User> & import("./schema/user.schema").User & Required<{
+    allUser(): Promise<(import("mongoose").Document<unknown, {}, import("./schema/user.schema").User, {}, {}> & import("./schema/user.schema").User & Required<{
         _id: unknown;
     }> & {
         __v: number;
     })[]>;
-    oneUser(id: string): Promise<(import("mongoose").Document<unknown, {}, import("./schema/user.schema").User> & import("./schema/user.schema").User & Required<{
+    oneUser(id: string): Promise<(import("mongoose").Document<unknown, {}, import("./schema/user.schema").User, {}, {}> & import("./schema/user.schema").User & Required<{
         _id: unknown;
     }> & {
         __v: number;
     }) | null>;
     update(id: string, updateAuthDto: UpdateAuthDto): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, import("./schema/user.schema").User> & import("./schema/user.schema").User & Required<{
+        data: import("mongoose").Document<unknown, {}, import("./schema/user.schema").User, {}, {}> & import("./schema/user.schema").User & Required<{
             _id: unknown;
         }> & {
             __v: number;
@@ -52,7 +52,7 @@ export declare class AuthController {
     }>;
     remove(id: string): Promise<{
         message: string;
-        data: (import("mongoose").Document<unknown, {}, import("./schema/user.schema").User> & import("./schema/user.schema").User & Required<{
+        data: (import("mongoose").Document<unknown, {}, import("./schema/user.schema").User, {}, {}> & import("./schema/user.schema").User & Required<{
             _id: unknown;
         }> & {
             __v: number;

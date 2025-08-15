@@ -7,4 +7,5 @@ export declare class FileUploadController {
         path: string;
     }>;
     findOne(id: string, res: Response): Promise<void>;
+    remove(id: String): Promise<void>;
 }

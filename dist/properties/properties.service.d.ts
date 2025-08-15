@@ -6,25 +6,25 @@ export declare class PropertiesService {
     constructor(propertiesModel: Model<createProperties>);
     create(createPropertyDto: CreatePropertyDto, user: any): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, createProperties> & createProperties & Required<{
+        data: import("mongoose").Document<unknown, {}, createProperties, {}, {}> & createProperties & Required<{
             _id: unknown;
         }> & {
             __v: number;
         };
     }>;
-    findAll(): Promise<(import("mongoose").Document<unknown, {}, createProperties> & createProperties & Required<{
+    findAll(): Promise<(import("mongoose").Document<unknown, {}, createProperties, {}, {}> & createProperties & Required<{
         _id: unknown;
     }> & {
         __v: number;
     })[]>;
-    findOne(id: string): Promise<(import("mongoose").Document<unknown, {}, createProperties> & createProperties & Required<{
+    findOne(id: string): Promise<(import("mongoose").Document<unknown, {}, createProperties, {}, {}> & createProperties & Required<{
         _id: unknown;
     }> & {
         __v: number;
     }) | null>;
     update(id: string, updatePropertyDto: CreatePropertyDto): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, createProperties> & createProperties & Required<{
+        data: import("mongoose").Document<unknown, {}, createProperties, {}, {}> & createProperties & Required<{
             _id: unknown;
         }> & {
             __v: number;

@@ -21,11 +21,11 @@ export declare class createProperties extends Document {
     image: string;
     creator: User;
 }
-export declare const createPropertiesSchema: mongoose.Schema<createProperties, mongoose.Model<createProperties, any, any, any, mongoose.Document<unknown, any, createProperties> & createProperties & Required<{
+export declare const createPropertiesSchema: mongoose.Schema<createProperties, mongoose.Model<createProperties, any, any, any, mongoose.Document<unknown, any, createProperties, any, {}> & createProperties & Required<{
     _id: unknown;
 }> & {
     __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, createProperties, mongoose.Document<unknown, {}, mongoose.FlatRecord<createProperties>> & mongoose.FlatRecord<createProperties> & Required<{
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, createProperties, mongoose.Document<unknown, {}, mongoose.FlatRecord<createProperties>, {}, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & mongoose.FlatRecord<createProperties> & Required<{
     _id: unknown;
 }> & {
     __v: number;

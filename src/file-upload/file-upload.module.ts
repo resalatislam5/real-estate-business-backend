@@ -46,5 +46,6 @@ import { FileUpload, FileUploadSchema } from "./schema/file-upload.schema";
   ],
   controllers: [FileUploadController],
   providers: [FileUploadService],
+  exports: [FileUploadService],
 })
 export class FileUploadModule {}

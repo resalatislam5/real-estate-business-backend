@@ -14,12 +14,12 @@ const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const auth_module_1 = require("./auth/auth.module");
-const business_sector_module_1 = require("./business-sector/business-sector.module");
 const contact_module_1 = require("./contact/contact.module");
-const user_module_1 = require("./user/user.module");
-const vendor_module_1 = require("./vendor/vendor.module");
 const file_upload_module_1 = require("./file-upload/file-upload.module");
 const properties_module_1 = require("./properties/properties.module");
+const testimonial_module_1 = require("./testimonial/testimonial.module");
+const user_module_1 = require("./user/user.module");
+const vendor_module_1 = require("./vendor/vendor.module");
 const wishlist_module_1 = require("./wishlist/wishlist.module");
 let AppModule = class AppModule {
 };
@@ -45,7 +45,6 @@ exports.AppModule = AppModule = __decorate([
                 }),
                 inject: [config_1.ConfigService],
             }),
-            business_sector_module_1.BusinessSectorModule,
             vendor_module_1.VendorModule,
             user_module_1.UserModule,
             auth_module_1.AuthModule,
@@ -53,6 +52,7 @@ exports.AppModule = AppModule = __decorate([
             file_upload_module_1.FileUploadModule,
             properties_module_1.PropertiesModule,
             wishlist_module_1.WishlistModule,
+            testimonial_module_1.TestimonialModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

@@ -8,7 +8,7 @@ export declare class ContactService {
         message: string;
     }>;
     findAll(): Promise<{
-        data: (import("mongoose").Document<unknown, {}, Contact> & Contact & Required<{
+        data: (import("mongoose").Document<unknown, {}, Contact, {}, {}> & Contact & Required<{
             _id: unknown;
         }> & {
             __v: number;

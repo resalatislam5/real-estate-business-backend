@@ -31,6 +31,7 @@ exports.FileUploadModule = FileUploadModule = __decorate([
         ],
         controllers: [file_upload_controller_1.FileUploadController],
         providers: [file_upload_service_1.FileUploadService],
+        exports: [file_upload_service_1.FileUploadService],
     })
 ], FileUploadModule);
 //# sourceMappingURL=file-upload.module.js.map

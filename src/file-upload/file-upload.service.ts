@@ -61,4 +61,12 @@ export class FileUploadService {
       throw new ForbiddenException("Data Not Found");
     }
   }
+
+  async remove(id: String) {
+    try {
+      await this.fileUploadModel.findByIdAndDelete(id);
+    } catch (e) {
+      throw new InternalServerErrorException(e.message);
+    }
+  }
 }

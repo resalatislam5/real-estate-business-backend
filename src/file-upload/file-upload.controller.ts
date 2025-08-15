@@ -1,5 +1,6 @@
 import {
   Controller,
+  Delete,
   FileTypeValidator,
   Get,
   Param,
@@ -48,5 +49,12 @@ export class FileUploadController {
     @Res() res: Response
   ) {
     return this.FileUploadService.findOne(id, res);
+  }
+
+  // delete single Image with id
+  @UseGuards(AuthGuards)
+  @Delete(":id")
+  remove(@Param("id") id: String) {
+    return this.FileUploadService.remove(id);
   }
 }

@@ -42,19 +42,19 @@ export declare class AuthService {
         jwtToken: string;
         refreshToken: string;
     }>;
-    allUser(): Promise<(import("mongoose").Document<unknown, {}, User> & User & Required<{
+    allUser(): Promise<(import("mongoose").Document<unknown, {}, User, {}, {}> & User & Required<{
         _id: unknown;
     }> & {
         __v: number;
     })[]>;
-    oneUser(id: string): Promise<(import("mongoose").Document<unknown, {}, User> & User & Required<{
+    oneUser(id: string): Promise<(import("mongoose").Document<unknown, {}, User, {}, {}> & User & Required<{
         _id: unknown;
     }> & {
         __v: number;
     }) | null>;
     remove(id: string): Promise<{
         message: string;
-        data: (import("mongoose").Document<unknown, {}, User> & User & Required<{
+        data: (import("mongoose").Document<unknown, {}, User, {}, {}> & User & Required<{
             _id: unknown;
         }> & {
             __v: number;
@@ -62,7 +62,7 @@ export declare class AuthService {
     }>;
     update(id: string, updateAuthDto: UpdateAuthDto): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, User> & User & Required<{
+        data: import("mongoose").Document<unknown, {}, User, {}, {}> & User & Required<{
             _id: unknown;
         }> & {
             __v: number;

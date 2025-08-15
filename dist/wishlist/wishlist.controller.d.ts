@@ -6,13 +6,13 @@ export declare class WishlistController {
     constructor(wishlistService: WishlistService);
     create(createWishlistDto: CreateWishlistDto, req: any): Promise<{
         message: string;
-        data: import("mongoose").Document<unknown, {}, import("./schema/wishlist.schema").Wishlist> & import("./schema/wishlist.schema").Wishlist & Required<{
+        data: import("mongoose").Document<unknown, {}, import("./schema/wishlist.schema").Wishlist, {}, {}> & import("./schema/wishlist.schema").Wishlist & Required<{
             _id: unknown;
         }> & {
             __v: number;
         };
     }>;
-    findAll(req: any): Promise<(import("mongoose").Document<unknown, {}, import("./schema/wishlist.schema").Wishlist> & import("./schema/wishlist.schema").Wishlist & Required<{
+    findAll(req: any): Promise<(import("mongoose").Document<unknown, {}, import("./schema/wishlist.schema").Wishlist, {}, {}> & import("./schema/wishlist.schema").Wishlist & Required<{
         _id: unknown;
     }> & {
         __v: number;
