@@ -16,12 +16,10 @@ exports.TestimonialService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
-const file_upload_service_1 = require("../file-upload/file-upload.service");
 const testimonial_schema_1 = require("./schema/testimonial.schema");
 let TestimonialService = class TestimonialService {
-    constructor(testimonialModel, fileUploadService) {
+    constructor(testimonialModel) {
         this.testimonialModel = testimonialModel;
-        this.fileUploadService = fileUploadService;
     }
     async create(createTestimonialDto) {
         const data = await this.testimonialModel.create(createTestimonialDto);
@@ -71,7 +69,6 @@ exports.TestimonialService = TestimonialService;
 exports.TestimonialService = TestimonialService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(testimonial_schema_1.Testimonial.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model,
-        file_upload_service_1.FileUploadService])
+    __metadata("design:paramtypes", [mongoose_2.Model])
 ], TestimonialService);
 //# sourceMappingURL=testimonial.service.js.map

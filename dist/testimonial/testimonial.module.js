@@ -10,7 +10,6 @@ exports.TestimonialModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const auth_module_1 = require("../auth/auth.module");
-const file_upload_module_1 = require("../file-upload/file-upload.module");
 const testimonial_schema_1 = require("./schema/testimonial.schema");
 const testimonial_controller_1 = require("./testimonial.controller");
 const testimonial_service_1 = require("./testimonial.service");
@@ -24,7 +23,6 @@ exports.TestimonialModule = TestimonialModule = __decorate([
                 { name: testimonial_schema_1.Testimonial.name, schema: testimonial_schema_1.TestimonialSchema },
             ]),
             auth_module_1.AuthModule,
-            file_upload_module_1.FileUploadModule,
         ],
         controllers: [testimonial_controller_1.TestimonialController],
         providers: [testimonial_service_1.TestimonialService],

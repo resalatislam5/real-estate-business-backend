@@ -1,11 +1,9 @@
 import { Model } from "mongoose";
-import { FileUploadService } from "src/file-upload/file-upload.service";
 import { CreateTestimonialDto } from "./dto/create-testimonial.dto";
 import { Testimonial } from "./schema/testimonial.schema";
 export declare class TestimonialService {
     private testimonialModel;
-    private fileUploadService;
-    constructor(testimonialModel: Model<Testimonial>, fileUploadService: FileUploadService);
+    constructor(testimonialModel: Model<Testimonial>);
     create(createTestimonialDto: CreateTestimonialDto): Promise<{
         message: string;
         data: import("mongoose").Document<unknown, {}, Testimonial, {}, {}> & Testimonial & Required<{
