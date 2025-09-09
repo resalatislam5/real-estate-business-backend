@@ -46,9 +46,9 @@ export class PropertiesService {
   async update(id: string, updatePropertyDto: CreatePropertyDto) {
     try {
       const { newImage, image } = updatePropertyDto;
-      if (newImage) {
-        await DeleteImage(image);
-      }
+      // if (newImage) {
+      //   await DeleteImage(image);
+      // }
       const updated = await this.propertiesModel.findByIdAndUpdate(
         id,
         { ...updatePropertyDto, image: newImage ?? image },
@@ -74,7 +74,6 @@ export class PropertiesService {
       if (!data) {
         throw new NotFoundException("Property not found");
       }
-      await DeleteImage(data.image);
 
       await this.propertiesModel.deleteOne({ _id: id });
 

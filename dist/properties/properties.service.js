@@ -17,7 +17,6 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const create_properties_schema_1 = require("./schema/create-properties.schema");
 const mongoose_2 = require("mongoose");
-const DeleteImage_1 = require("../utils/DeleteImage");
 let PropertiesService = class PropertiesService {
     constructor(propertiesModel) {
         this.propertiesModel = propertiesModel;
@@ -51,9 +50,6 @@ let PropertiesService = class PropertiesService {
     async update(id, updatePropertyDto) {
         try {
             const { newImage, image } = updatePropertyDto;
-            if (newImage) {
-                await (0, DeleteImage_1.DeleteImage)(image);
-            }
             const updated = await this.propertiesModel.findByIdAndUpdate(id, { ...updatePropertyDto, image: newImage ?? image }, {
                 new: true,
                 runValidators: true,
@@ -74,7 +70,6 @@ let PropertiesService = class PropertiesService {
             if (!data) {
                 throw new common_1.NotFoundException("Property not found");
             }
-            await (0, DeleteImage_1.DeleteImage)(data.image);
             await this.propertiesModel.deleteOne({ _id: id });
             return { message: `removes a #${id} property` };
         }
