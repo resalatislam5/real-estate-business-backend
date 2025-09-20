@@ -168,7 +168,7 @@ export class AuthService {
     );
 
     if (!data) {
-      throw new NotFoundException("Property not found");
+      throw new NotFoundException("user not found");
     }
 
     return { message: "Updated successfully", data };

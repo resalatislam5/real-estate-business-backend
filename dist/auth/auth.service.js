@@ -139,7 +139,7 @@ let AuthService = class AuthService {
         const updateDto = { name, number, address, image: newImage ?? image };
         const data = await this.UserModel.findByIdAndUpdate(id, updateDto, { new: true, runValidators: true });
         if (!data) {
-            throw new common_1.NotFoundException("Property not found");
+            throw new common_1.NotFoundException("user not found");
         }
         return { message: "Updated successfully", data };
     }
